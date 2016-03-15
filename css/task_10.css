@@ -1,0 +1,34 @@
+.box{
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	border: 1px solid red;
+}
+.flex{
+	border: 1px solid #f00;
+	width: 150px;
+	margin:20px;
+}
+.flex:last-of-type{
+	border: 1px solid #0f0;
+	height: 200px;
+}
+.box_1{
+	height: 120px;
+}
+.box_2{
+	height: 100px;
+}
+.box_3{
+	height: 40px;
+}
+@media (max-width: 640px) {
+    .flex:last-of-type{
+        order: -1;
+    }
+    .box{
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
