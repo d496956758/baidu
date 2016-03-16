@@ -1,0 +1,100 @@
+* {
+	box-sizing: border-box;
+	font-family: "sans-serif","宋体";
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+.header{
+	width: 100%;
+	height: 55px;
+	background-color: #2189bf;
+	overflow: hidden;
+}
+.logo{
+	float: left;
+	height: 36px;
+	width: 36px;
+	background-image:url(../images/task_1_9_1_01.gif);
+	margin: 10px 20px;
+}
+.user-img{
+	display:inline-block;
+	width: 15px;
+	height: 16px;
+	background-image:url(../images/task_1_9_1_03.gif); 
+}
+.select{
+	float: right;
+	line-height: 55px;
+	margin-right: 80px;
+
+	
+}
+.signin{
+	font-size: 14px;
+}
+.search{
+	width: 300px;
+}
+.search input{
+	width: 320px;
+	background:url(../images/task_1_9_1_02.gif) no-repeat #fff 10px 5px;
+	padding:5px;
+	border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border: none;
+}
+.center{
+	overflow: hidden;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.left{
+	float:left;
+	width:260px;
+	height: 1000px;
+	background-color:#151c39;
+}
+.user-name{
+	color: #fff;
+	width: 100%;
+	overflow: hidden;
+	padding:0 50px;
+}
+.user-name img{
+	margin-top:20px;
+	float: left;
+}
+.user-name span{
+	line-height: 100px;
+	float: right;
+	width: 80px;
+}
+.user-collection{
+	width: 100%;
+	overflow: hidden;
+	height: 80px;
+	padding: 0 40px;
+}
+.user-collection span{
+	float: left;
+	width: 80px;
+	text-align: center;
+	font-size: 16px;
+}
+.user-collection a{
+	color: #557097;
+}
+.user-s{
+	font-size: 12px;
+}
+.user-span-left{
+	border-right: 1px solid #25315c;
+}
