@@ -9,6 +9,9 @@ a{
 	color: #fff;
 	text-decoration: none;
 }
+a:hover{
+	color: #fff;
+}
 ul{
 	list-style-type:none; 
 }
@@ -55,7 +58,7 @@ ul{
 }
 .center{
 	overflow: hidden;
-	width: 100%;
+	width: 1280px;
 	margin: 0;
 	padding: 0;
 }
@@ -103,5 +106,107 @@ ul{
 }
 .nav-first{
 	width: 100%;
-	margin: 0 40px;
+}
+.nav-first-li{
+	height: 50px;
+	line-height: 50px;
+	font-size: 12px;
+	padding:0 75px;
+	width: 100%;
+	float: left;
+}
+.nav-bg-4{
+	background: url(../images/task_1_9_1_04.png) no-repeat;
+}
+.nav-bg-6{
+	background: url(../images/task_1_9_1_06.png) no-repeat 50px 20px;
+}
+.nav-bg-7{
+	background: url(../images/task_1_9_1_07.png) no-repeat 0px;
+}
+.nav-bg-8{
+	background: url(../images/task_1_9_1_08.png) no-repeat;
+}
+.nav-bg-10{
+	background: url(../images/task_1_9_1_10.png) no-repeat 0px;
+}
+.nav-bg-13{
+	background: url(../images/task_1_9_1_13.png) no-repeat 0px;
+}
+.nav-bg-16{
+	background: url(../images/task_1_9_1_16.png) no-repeat 0px;
+}
+.nav-bg-18{
+	background: url(../images/task_1_9_1_18.png) no-repeat 50px 20px;
+}
+.nav-bg-21{
+	background: url(../images/task_1_9_1_21.png) no-repeat 50px 20px;
+}
+.nav-bg-23{
+	background: url(../images/task_1_9_1_23.png) no-repeat 50px 20px;
+}
+.nav-first a:hover{
+	background-color: #222b52;
+}
+.nav-light{
+	background-color: #222b52;
+	height: 230px;
+}
+.arrow-ul{
+	margin-left:80px;
+}
+.nav-light-ls{
+	height: 120px;
+	padding-left: 30px; 
+}
+.nav-light-sm{
+	height: 30px;
+	line-height: 30px;
+	margin-left:30px;
+	padding-left:20px;
+	color: #fff;
+	float: left;
+	width: 130px;
+}
+.blue{
+	color: #6e8095;
+}
+.nav-second{
+	padding-left: 30px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	width: 100%;
+}
+.arrow{
+	float: left;
+	width: 100%;
+	padding-left:20px;
+}
+.arrow-w{
+	background:url(../images/task_1_9_1_08.png) no-repeat 0px 8px;
+	height: 40px;
+	line-height: 40px;
+}
+.arrow-s{
+	background:url(../images/task_1_9_1_04.png) no-repeat 0px 8px;
+}
+.content{
+	width: 1020px;
+	float: left;
+	padding: 5px 20px;
+}
+.title{
+	width: 100%;
+	overflow: hidden;
+	color: #aeb7b4;
+}
+.title a{
+	color: #000;
+	font-size: 12px;
+	margin:0 10px;
+	color: #aeb7b4;
+}
+.title a:hover{
+	color: #74a7c2;
 }
