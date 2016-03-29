@@ -55,8 +55,15 @@ var pageState = {
  * 渲染图表
  */
 function renderChart() {
-    var aqiChartWrap = document.getElementsByClassName("aqi-chart-wrap")[0];
-    alert("123");
+    var str = "";
+    for(var n in chartData){
+        str += "<div class='chart " + pageState["nowGraTime"] + "'>";
+        str += "<div class='data' style='height:" + chartData[n] + "px;'"
+            + " title='空气质量为" + chartData[n] + "'></div>";
+        str += "</div>";
+    }
+    document.getElementsByClassName("aqi-chart-wrap")[0].innerHTML = str;
+    console.log(chartData);
 }
 
 /**
@@ -71,6 +78,7 @@ function graTimeChange(time) {
         if (time.target.value!=pageState.nowGraTime) {
             if (option.value != "-1") {
                 pageState.nowGraTime = time.target.value;
+                initAqiChartData()
                 renderChart()
             };
         };
@@ -86,6 +94,7 @@ function citySelectChange(time) {
     // 调用图表渲染函数
     if (time.target.value!=pageState.nowSelectCity && time.target.value!= "-1") {
         pageState.nowSelectCity = time.target.value;
+        initAqiChartData()
         renderChart()
     };
 }
@@ -101,7 +110,7 @@ function initGraTimeForm() {
  * 初始化城市Select下拉选择框中的选项
  */
 function initCitySelector() {
-  // 读取aqiSourceData中的城市，然后设置id为city-select的下拉列表中的选项
+    // 读取aqiSourceData中的城市，然后设置id为city-select的下拉列表中的选项
     var optionCity = document.getElementById("city-select"),
         sqiData = [];
         sqiData.push('<option value="-1">--请选择--</option>');
@@ -109,7 +118,7 @@ function initCitySelector() {
         sqiData.push('<option value="' + city + '">' + city + '</option>')
     };
     optionCity.innerHTML = sqiData.join('');
-  // 给select设置事件，当选项发生变化时调用函数citySelectChange
+    // 给select设置事件，当选项发生变化时调用函数citySelectChange
     optionCity.addEventListener('change', citySelectChange);
 }
 
@@ -120,22 +129,57 @@ function initAqiChartData() {
     // 将原始的源数据处理成图表需要的数据格式
     // 处理好的数据存到 chartData 中
     // 91天 14周 3月
-    alert(aqiSourceData.);
-    var graTime = document.getElementsByName("gra-time"),timeNow="";
-    var city = document.getElementById("city-select").value,
-        time = "2016-";
-
-    pageState["nowSelectCity"]=city;
-    pageState["nowGraTime"]=time;
+    chartData = [];
+    var city = pageState.nowSelectCity;
+    var time = pageState.nowGraTime;
+    // 调用图表渲染函数
+    switch(time){
+        case 'day':
+            chartData = aqiSourceData[pageState.nowSelectCity];
+        break;
+        case 'week':
+            chartData = aqiSourceData[pageState.nowSelectCity];
+            var count = 1
+            var num = 0
+            var temp = {}
+            for(var i in chartData) {
+                var index = Math.ceil(count / 7)
+                num += chartData[i]
+                if(count % 7 === 0) {
+                    temp[index] = num
+                    num = 0
+                }
+                count += 1;
+            }
+            chartData = temp
+        break;
+        case 'month':
+            chartData = aqiSourceData[pageState.nowSelectCity];
+            var count1 = count2 = count3 = 0;
+            for(var i in chartData) {
+                if(i.indexOf('2016-01') >= 0) {
+                    count1 += chartData[i]
+                } else if(i.indexOf('2016-02') >= 0) {
+                    count2 += chartData[i]
+                } else {
+                    count3 += chartData[i]
+                }
+            }
+            chartData = {
+            '1': count1,
+            '2': count2,
+            '3': count3
+            }
+        break;
+    }
 }
-
 /**
  * 初始化函数
  */
 function init() {
-  initGraTimeForm()
-  initCitySelector();
-  initAqiChartData();
+    initGraTimeForm()
+    initCitySelector();
+    initAqiChartData();
 }
 
 init();
