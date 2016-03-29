@@ -141,7 +141,7 @@ function initAqiChartData() {
             chartData = aqiSourceData[pageState.nowSelectCity];
             var count = 1
             var num = 0
-            var temp = {}
+            var temp = []
             for(var i in chartData) {
                 var index = Math.ceil(count / 7)
                 num += chartData[i]
@@ -152,6 +152,7 @@ function initAqiChartData() {
                 count += 1;
             }
             chartData = temp
+            console.log(index);
         break;
         case 'month':
             chartData = aqiSourceData[pageState.nowSelectCity];
@@ -165,10 +166,13 @@ function initAqiChartData() {
                     count3 += chartData[i]
                 }
             }
+            month1 = count1/31
+            month2 = count2/29
+            month3 = count3/31
             chartData = {
-            '1': count1,
-            '2': count2,
-            '3': count3
+            '1': month1.toFixed(0),
+            '2': month2.toFixed(0),
+            '3': month3.toFixed(0)
             }
         break;
     }
