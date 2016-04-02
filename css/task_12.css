@@ -1,0 +1,97 @@
+.table-red{
+	color: red;
+}
+table th{
+	background-color: #000;
+	color: #fff;
+}
+table tr:nth-child(2n+1){
+	background-color: #ccc;
+}
+input{
+    margin-top: 50px;
+    width: 200px;
+	transition:0.5s width;
+    outline: none;
+}
+input:focus{
+	width:300px;
+}
+/* 切换图片效果banner*/
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul li, .banner-controll {
+  position: absolute;
+}
+
+ul, .banner-controll a {
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.banner{
+  overflow: hidden;
+}
+
+table {
+  width: 400px;
+}
+
+.banner {
+  margin-top: 30px;
+  border: 1px solid #9cc5ef;
+  width: 300px;
+  height: 200px;
+  position: relative;
+}
+
+@keyframes scroll {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+ul {
+  width: 300%;
+  color: #fff;
+}
+ul li {
+  width: 300px;
+  height: 100%;
+}
+ul li:nth-child(1) {
+  z-index: 1;
+  background-color: #00f;
+}
+ul li:nth-child(2) {
+  z-index: 2;
+  background-color: #0f0;
+}
+ul li:nth-child(3) {
+  z-index: 3;
+  background-color: #f00;
+}
+ul li:target {
+  z-index: 6;
+  animation: scroll 500ms linear;
+}
+
+.banner-controll {
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+.banner-controll a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  opacity: 0.5;
+  background-color: #fff;
+}
