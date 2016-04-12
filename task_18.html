@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+    <style>
+        .box li{
+            display: inline-block;
+            font-size: 30px;
+            text-align: center;
+            padding: 0 15px;
+            margin: 2px 0;
+            margin-right: 10px;
+            height: 50px;
+            line-height: 50px;
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+  </head>
+<body>
+    <div class="top">
+        <input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="num" type="text">
+        <input type="button" class="button" value="左侧入">
+        <input type="button" class="button" value="右侧入">
+        <input type="button" class="button" value="左侧出">
+        <input type="button" class="button" value="右侧出">
+    </div>
+    <div>
+        <ul class="box"></ul>
+    </div>
+</body>
+    <script type="text/javascript" src="js/task_18.js"></script>
+</html>
